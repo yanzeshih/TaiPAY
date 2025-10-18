@@ -157,7 +157,3 @@ updateHeaderVisibility();
 
 document.addEventListener('click', updateHeaderVisibility);
 
-updateHeaderVisibility();
-
-document.addEventListener('click', updateHeaderVisibility);
-
