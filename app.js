@@ -157,3 +157,9 @@ updateHeaderVisibility();
 
 document.addEventListener('click', updateHeaderVisibility);
 
+const userData = JSON.parse(localStorage.getItem('user'));
+if (userData) {
+  document.querySelector('#profilePage h2').textContent = userData.name;
+  document.querySelector('#profilePage p').textContent = `Student ID: ${userData.id}`;
+}
+
