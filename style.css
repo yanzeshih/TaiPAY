@@ -215,3 +215,20 @@ textarea {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Login / Signup Pages */
+#loginPage, #signupPage {
+  text-align: center;
+  margin-top: 80px;
+}
+
+#loginPage input, 
+#signupPage input {
+  margin-bottom: 10px;
+}
+
+#loginPage h2, 
+#signupPage h2 {
+  color: #e0e6ff;
+  margin-bottom: 20px;
+}
