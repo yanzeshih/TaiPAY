@@ -9,6 +9,28 @@
 </head>
 <body>
   <div class="app">
+    <!-- Login Page -->
+    <section id="loginPage" class="page">
+    <h2>Welcome to TaiPAY</h2>
+    <input type="text" id="loginID" placeholder="Student ID" />
+    <input type="password" id="loginPassword" placeholder="Password" />
+    <button id="loginBtn" class="primary-btn">Log In</button>
+    <p style="text-align:center; margin-top:10px;">Don’t have an account?</p>
+    <button id="goToSignup" class="method-btn" style="width:100%;">Sign Up</button>
+    </section>
+
+    <!-- Signup Page -->
+    <section id="signupPage" class="page hidden">
+    <h2>Create an Account</h2>
+    <input type="text" id="signupName" placeholder="Full Name" />
+    <input type="text" id="signupID" placeholder="Student ID" />
+    <input type="email" id="signupEmail" placeholder="Email" />
+    <input type="password" id="signupPassword" placeholder="Password" />
+    <input type="password" id="signupConfirm" placeholder="Confirm Password" />
+    <button id="signupBtn" class="primary-btn">Sign Up</button>
+    <button id="backToLogin" class="method-btn" style="width:100%; margin-top:10px;">← Back to Login</button>
+    </section>
+
     <!-- Header -->
     <header class="app-header">
       <div class="left">
@@ -123,6 +145,7 @@
 </html>
 
  
+
 
 
 
