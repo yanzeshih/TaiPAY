@@ -96,6 +96,10 @@ document.getElementById('signupBtn').addEventListener('click', () => {
   const email = document.getElementById('signupEmail').value.trim();
   const pass = document.getElementById('signupPassword').value;
   const confirm = document.getElementById('signupConfirm').value;
+    // Save user info (demo purpose only)
+  const user = { name, id, email, pass };
+  localStorage.setItem('user', JSON.stringify(user));
+
 
   if (!name || !id || !email || !pass || !confirm) {
     alert('⚠️ Please fill in all fields.');
@@ -107,30 +111,33 @@ document.getElementById('signupBtn').addEventListener('click', () => {
   }
 
   // Save simple user data (for demo only)
-  localStorage.setItem('userID', id);
-  localStorage.setItem('userPass', pass);
+ 
   alert('✅ Sign-up successful!');
   signupPage.classList.add('hidden');
   loginPage.classList.remove('hidden');
 });
 
-// Login button
+
 document.getElementById('loginBtn').addEventListener('click', () => {
   const id = document.getElementById('loginID').value.trim();
   const pass = document.getElementById('loginPassword').value;
 
-  const savedID = localStorage.getItem('userID');
-  const savedPass = localStorage.getItem('userPass');
+  const userData = JSON.parse(localStorage.getItem('user'));
 
-  if (id === savedID && pass === savedPass) {
+  if (userData && id === userData.id && pass === userData.pass) {
     alert('✅ Login successful!');
     loginPage.classList.add('hidden');
     homePageSection.classList.remove('hidden');
     document.querySelector('.bottom-nav').style.display = 'flex';
+
+    
+    document.querySelector('#profilePage h2').textContent = userData.name;
+    document.querySelector('#profilePage p').textContent = `Student ID: ${userData.id}`;
   } else {
     alert('❌ Invalid ID or password.');
   }
 });
+
 
 
 document.querySelector('.bottom-nav').style.display = 'none';
@@ -149,3 +156,8 @@ function updateHeaderVisibility() {
 updateHeaderVisibility();
 
 document.addEventListener('click', updateHeaderVisibility);
+
+updateHeaderVisibility();
+
+document.addEventListener('click', updateHeaderVisibility);
+
