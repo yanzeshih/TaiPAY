@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaiPAY | Campus Wallet</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="left">
+        <span id="notificationBell">🔔</span>
+        <div class="notification-dropdown" id="notificationDropdown">
+          <p>Bank linked successfully</p>
+          <p>Received NT$200 from John (115208111)</p>
+          <p>Payment sent successfully</p>
+        </div>
+      </div>
+      <div class="right">
+        <span id="profileIcon">👤</span>
+      </div>
+    </header>
+
+    <!-- Profile Page -->
+    <section id="profilePage" class="hidden">
+      <div class="profile-card">
+        <div class="profile-photo"></div>
+        <h2>Jane Chen</h2>
+        <p>ID: 115409502</p>
+        <button class="back-btn" id="backToHome">← Back</button>
+      </div>
+    </section>
+
+    <!-- Home Page -->
+    <section id="homePage" class="page">
+      <h2 class="balance">NT$ 3,240</h2>
+      <div class="card">
+        <h3>Linked Accounts</h3>
+        <div class="linked-icons">
+          <span><img src="/linepay_icon.jpg" style="width: 1em; height: 1em; vertical-align: middle;"/> Line Pay</span>
+          <span><img src="/revolut_icon.png" style="width: 1em; height: 1em; vertical-align: middle;"/> Revolut</span>
+          <span><img src="/wise_icon.png" style="width: 1em; height: 1em; vertical-align: middle;"/> Wise</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Recent Activity</h3>
+        <ul>
+          <li>Received NT$500 from Mei (113603746)</li>
+          <li>Paid NT$120 for Club Event Ticket</li>
+        </ul>
+      </div>
+
+      <button id="toTransfer" class="primary-btn">Make a Transfer</button>
+    </section>
+
+    <!-- Transfer Page -->
+    <section id="transferPage" class="page hidden">
+      <h2>Transfer Money</h2>
+      <input type="text" placeholder="Recipient Name" />
+      <input type="text" placeholder="Student ID" />
+      <input type="number" placeholder="Amount (NT$)" />
+      <div class="payment-methods">
+        <button class="method-btn" data-method="Line Pay">Line Pay</button>
+        <button class="method-btn" data-method="Revolut">Revolut</button>
+        <button class="method-btn" data-method="Wise">Wise</button>
+      </div>
+      <button id="sendMoney" class="primary-btn">Send Money</button>
+    </section>
+
+    <!-- History Page -->
+    <section id="historyPage" class="page hidden">
+      <h2>Transaction History</h2>
+      <div class="card">Sent NT$200 to Alex (112686386) via Revolut</div>
+      <div class="card">Received NT$500 from Mei (113603746) via Line Pay</div>
+    </section>
+
+    <!-- Settings Page -->
+    <section id="settingsPage" class="page hidden">
+      <h2>Settings</h2>
+
+      <div class="settings-card">
+        <h3>Bank & E-Payment Linking</h3>
+        <input type="text" placeholder="Enter Bank Account Number" />
+        <button class="primary-btn link-bank">Link Bank</button>
+        <div class="link-options">
+          <button class="method-btn">Line Pay</button>
+          <button class="method-btn">Revolut</button>
+          <button class="method-btn">Wise</button>
+        </div>
+      </div>
+
+      <div class="settings-card">
+        <h3>Change Password</h3>
+        <input type="password" placeholder="New Password" />
+        <input type="password" placeholder="Confirm New Password" />
+        <button class="primary-btn change-pass">Save</button>
+      </div>
+
+      <div class="settings-card">
+        <h3>Feedback</h3>
+        <textarea placeholder="Share your feedback..."></textarea>
+        <button class="primary-btn feedback-btn">Submit</button>
+      </div>
+
+      <button class="logout-btn">Log out</button>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="homePage">💰<span>Home</span></button>
+      <button class="nav-btn" data-page="transferPage">🔁<span>Transfer</span></button>
+      <button class="nav-btn" data-page="historyPage">📜<span>History</span></button>
+      <button class="nav-btn" data-page="settingsPage">⚙️<span>Settings</span></button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+ 
